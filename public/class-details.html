@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Details</title>
+    <link rel="stylesheet" href="css/class-details-styles.css">
+    <!-- Include Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Class Details Section with Delete Button -->
+        <section class="class-details">
+            <div class="header-container">
+                <h2 id="class-name">Loading...</h2>
+                <button id="deleteClassBtn" class="delete-btn">Delete Class</button>
+            </div>
+            <div class="class-info">
+                <p>Faculty: <span id="faculty-name">Loading...</span></p>
+            </div>
+        </section>
+        
+        <!-- Add Student Section -->
+        <section class="add-student">
+            <h3>Add Student</h3>
+            <form id="addStudentForm">
+                <label for="studentEmail">Select Student:</label>
+                <select id="studentEmail" name="studentEmail" required>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+                <button type="submit">Add Student</button>
+            </form>
+        </section>
+        
+        <!-- Add Faculty Section -->
+        <section class="add-faculty">
+            <h3>Add Faculty</h3>
+            <form id="addFacultyForm">
+                <label for="facultyEmail">Select Faculty:</label>
+                <select id="facultyEmail" name="facultyEmail" required>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+                <button type="submit">Add Faculty</button>
+            </form>
+        </section>
+        
+        <!-- Current Students Section -->
+        <section class="current-students">
+            <h3>Current Students</h3>
+            <ul id="student-list">
+                <!-- Student list will be populated by JavaScript -->
+            </ul>
+        </section>
+        
+        <!-- Current Faculty Section -->
+        <section class="current-faculty">
+            <h3>Current Faculty</h3>
+            <ul id="faculty-list">
+                <!-- Faculty list will be populated by JavaScript -->
+            </ul>
+        </section>
+        
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <button id="previousBtn" class="prev-btn">Previous</button>
+            <button id="saveAndExitBtn" class="save-btn">Save & Exit</button>
+        </div>
+    </div>
+    
+    <script type="module" src="js/class-details.js"></script>
+</body>
+</html>

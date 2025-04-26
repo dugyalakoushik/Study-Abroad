@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMU Login</title>
+    <link rel="stylesheet" href="css/login-styles.css">
+</head>
+<body>
+    <div class="left-panel">
+        <div class="tamu-logo">TAMU</div>
+        <h1 class="university-title">Texas A&M University</h1>
+        <h2 class="school-name">Mays Business School</h2>
+        <h2 class="program-name">Study Abroad Program</h2>
+        <h3 class="student-checkin">Student Check In Made Easy</h3>
+    </div>
+    <div class="right-panel">
+        <div class="login-container">
+            <h1 class="login-title">Welcome Back!</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+                    <a href="resetpwd.html" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <p class="signup-text">
+                    Don't have an account? <a href="signup.html" class="signup-link">Sign up</a>
+                </p>
+                <div id="loginStatus"></div>
+            </form>
+        </div>
+    </div>
+    <script src="js/login.js" type="module"></script>
+</body>
+</html>

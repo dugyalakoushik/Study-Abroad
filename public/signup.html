@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TAMU Study Abroad - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/signup-styles.css">
+</head>
+<body>
+    <!-- Top Login Button -->
+    <div class="top-login">
+        <button class="top-login-btn" id="loginBtn" onclick="redirectToLogin()">Login</button>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Side Content -->
+        <div class="left-half">
+            <div class="overlay"></div>
+            <div class="left-content">
+                <div class="logo-container">
+                    <div class="university-logo">TAMU</div>
+                </div>
+                <h1>Texas A&M University</h1>
+                <div class="subtitle">Mays Business School</div>
+                <div class="program">Study Abroad Program</div>
+                <div class="checkin">Student Check-In Made Easy</div>
+            </div>
+        </div>
+
+        <!-- Right Side Form -->
+        <div class="right-half">
+            <form class="signup-form" id="signupForm">
+                <h2>Create Account</h2>
+
+                <!-- Google Sign-Up Button -->
+                <button type="button" class="google-btn" id="googleSignIn">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=" alt="Google Logo">
+                    Sign up with Google
+                </button>
+
+                <!-- Divider -->
+                <div class="or-divider">OR</div>
+
+                <!-- Input Fields -->
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" required placeholder="Enter your first name">
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" required placeholder="Enter your last name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1234567890 (optional)">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Create a password">
+                    
+                    <div class="password-policy">
+                        <p>Password must contain:</p>
+                        <ul>
+                            <li id="length">8-30 characters</li>
+                            <li id="uppercase">At least 1 uppercase letter</li>
+                            <li id="lowercase">At least 1 lowercase letter</li>
+                            <li id="number">At least 1 number</li>
+                            <li id="special">At least 1 special character</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" required placeholder="Confirm your password">
+                </div>
+                <div class="form-group">
+                     <label for="role">Sign up as</label>
+                     <select id="role" required>
+                         <option value="">Select role</option>
+                         <option value="student">student</option>
+                         <option value="faculty">faculty</option>
+                         <!-- <option value="admin">admin</option> -->
+                     </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="signup-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="js/signup.js"></script>
+</body>
+</html>

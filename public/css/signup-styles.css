@@ -1,0 +1,470 @@
+:root {
+    --maroon: #500000;
+    --maroon-dark: #400000;
+    --maroon-light: #8B0000;
+    --white: #ffffff;
+    --gray-100: #f7f7f7;
+    --gray-200: #e5e5e5;
+    --gray-300: #d4d4d4;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+}
+
+/* Left Half Styles */
+.left-half {
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    overflow: hidden;
+    background: linear-gradient(145deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(80, 0, 0, 0.1), rgba(80, 0, 0, 0.2));
+    z-index: 1;
+}
+
+.left-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.logo-container {
+    margin-bottom: 2rem;
+}
+
+.university-logo {
+    width: 100px;
+    height: 100px;
+    background-color: var(--white);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--maroon);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.left-half h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #FFB3B3;
+    margin-bottom: 0.8rem;
+}
+
+.program {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #FFD6D6;
+    margin-bottom: 1rem;
+}
+
+.checkin {
+    font-size: 1.1rem;
+    color: #FFECEC; /* Light pink text color */
+    font-weight: 400;
+    margin-top: 1.5rem; /* Adjust as needed */
+    display: inline; /* Inline display instead of block */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    background: none; /* No background */
+    content: "“Student Check In Made Easy”"; /* Adding double quotes */
+}
+
+/* Right Half Styles */
+.right-half {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background-color: var(--white);
+}
+
+.signup-form {
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+}
+
+.signup-form h2 {
+    color: var(--maroon);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--white);
+    color: #333;
+    border: 1px solid var(--gray-300);
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.google-btn:hover {
+    background-color: var(--gray-100);
+    border-color: var(--gray-300);
+}
+
+.google-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.or-divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+    color: #666;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: var(--gray-300);
+}
+
+.or-divider::before {
+    left: 0;
+}
+
+.or-divider::after {
+    right: 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--maroon);
+    box-shadow: 0 0 0 2px rgba(80, 0, 0, 0.1);
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--maroon);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.signup-btn:hover {
+    background-color: var(--maroon-dark);
+    transform: translateY(-1px);
+}
+
+.top-login {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.top-login-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    color: var(--maroon);
+    border: 2px solid var(--maroon);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.top-login-btn:hover {
+    background-color: var(--maroon);
+    color: var(--white);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-half, .right-half {
+        width: 100%;
+    }
+
+    .left-half {
+        min-height: 45vh;
+        padding: 2rem 1rem;
+    }
+
+    .left-half h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+    }
+
+    .program {
+        font-size: 1.1rem;
+    }
+
+    .checkin {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .university-logo {
+        width: 80px;
+        height: 80px;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .right-half {
+        padding: 2rem 1rem;
+    }
+
+    .signup-form {
+        padding: 1rem;
+        width: 90%;
+    }
+
+    .google-btn {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .signup-btn {
+        padding: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-half h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .program {
+        font-size: 1rem;
+    }
+
+    .university-logo {
+        width: 70px;
+        height: 70px;
+        font-size: 1.2rem;
+    }
+
+    .top-login {
+        top: 10px;
+        right: 10px;
+    }
+
+    .top-login-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .container {
+        flex-direction: row;
+    }
+
+    .left-half, .right-half {
+        width: 50%;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .left-half {
+        position: fixed;
+        left: 0;
+        width: 50%;
+    }
+
+    .right-half {
+        margin-left: 50%;
+    }
+
+    .university-logo {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    .left-half h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .program {
+        font-size: 1rem;
+    }
+}
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--white);
+    color: #333;
+    transition: var(--transition);
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--maroon);
+    box-shadow: 0 0 0 2px rgba(80, 0, 0, 0.1);
+}
+
+.password-policy {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+    background-color: var(--gray-100);
+    padding: 0.8rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--maroon);
+}
+
+.password-policy p {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.password-policy ul {
+    list-style-type: none;
+    padding-left: 0.5rem;
+    margin: 0;
+}
+
+.password-policy li {
+    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.password-policy li.valid {
+    color: #28a745;
+}
+
+.password-policy li.invalid {
+    color: #666;
+}
+
+.password-policy li:before {
+    content: "•";
+    margin-right: 0.5rem;
+}
+
+.password-policy li.valid:before {
+    content: "✓";
+    color: #28a745;
+}
+
+.password-policy li.invalid:before {
+    content: "•";
+    color: #666;
+}

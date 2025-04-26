@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="css/profile-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile-pic">
+                <img src="profile-placeholder.png" alt="Profile Picture">
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active"><i class="fas fa-user"></i> Profile</li>
+                    <li><i class="fas fa-bell"></i> Notifications</li>
+                    <li><i class="fas fa-lock"></i> Sign-in & Security</li>
+                    <li><i class="fas fa-question-circle"></i> Help</li>
+                    <li><i class="fas fa-cog"></i> Account Settings</li>
+                </ul>
+            </nav>
+            <div class="logout-container">
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="content-wrapper">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-title">
+                            <div class="profile-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h1>Profile Information</h1>
+                        </div>
+                        <button id="editProfileBtn" class="edit-btn">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                    </div>
+                    <form id="profileForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" value="John" disabled required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" value="Doe" disabled required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" value="johndoe" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" value="john.doe@example.com" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" value="+1 (555) 123-4567" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" value="•••••••" disabled>
+                        </div>
+                        <div class="form-actions" style="display: none;">
+                            <button type="button" id="cancelBtn" class="cancel-btn">Cancel</button>
+                            <button type="submit" id="saveBtn" class="save-btn">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="panel messages">
+                    <div class="panel-header">
+                        <div class="panel-icon">
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <h2>Messages</h2>
+                    </div>
+                    <div class="panel-content">
+                        <p>No new messages</p>
+                    </div>
+                </div>
+                <div class="panel requests">
+                    <div class="panel-header">
+                        <div class="panel-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h2>Requests</h2>
+                    </div>
+                    <div class="panel-content">
+                        <p>No new requests</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/profile.js"></script>
+</body>
+</html>

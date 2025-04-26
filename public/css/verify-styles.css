@@ -1,0 +1,105 @@
+:root {
+    --maroon: #500000;
+    --maroon-dark: #400000;
+    --maroon-light: #8B0000;
+    --white: #ffffff;
+    --gray-100: #f7f7f7;
+    --gray-200: #e5e5e5;
+    --gray-300: #d4d4d4;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--maroon);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333333;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    border: 1.5px solid var(--gray-200);
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: var(--gray-300);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--maroon);
+    box-shadow: 0 0 0 2px rgba(80, 0, 0, 0.1);
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--maroon);
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--maroon-dark);
+}
+
+button.verify-btn {
+    margin-top: 1rem; /* Add spacing above the button */
+}
+
+button.verify-btn:hover {
+    transform: translateY(-2px); /* Add slight hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+        width: calc(100% - 2rem); /* Add some spacing on smaller screens */
+        margin-top: -50px; /* Adjust vertical alignment */
+        box-shadow: none; /* Remove shadow for smaller devices */
+        border-radius:-matching*/
+}

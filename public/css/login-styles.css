@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+.left-panel {
+    width: 50%;
+    background-color: #580000;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.right-panel {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tamu-logo {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #580000;
+    margin-bottom: 30px;
+}
+
+.university-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.school-name {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.program-name {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.student-checkin {
+    font-size: 18px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-title {
+    font-size: 36px;
+    color: #580000;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+}
+
+.forgot-password {
+    color: #580000;
+    text-decoration: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #580000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #400000;
+}
+
+.signup-text {
+    text-align: center;
+    color: #333;
+}
+
+.signup-link {
+    color: #580000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#loginStatus {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#loginStatus.success {
+    color: green;
+}
+
+#loginStatus.error {
+    color: red;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .university-title {
+        font-size: 32px;
+    }
+
+    .school-name {
+        font-size: 24px;
+    }
+
+    .program-name {
+        font-size: 20px;
+    }
+}

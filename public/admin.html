@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMU Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <!-- Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="nav-menu">
+                <button data-page="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</button>
+                <button data-page="profile"><i class="fas fa-user"></i> Profile</button>
+                <button data-page="help"><i class="fas fa-question-circle"></i> Help</button>
+            </nav>
+            <button class="logout-btn desktop-logout" id="desktopLogoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <div class="dashboard-content">
+                <div class="header">
+                    <h1>Welcome to Admin Dashboard</h1>
+                    <button class="primary-btn create-group-btn">
+                        + Create Group
+                    </button>
+                </div>
+
+                <!-- Current Groups Section -->
+                <section class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-users"></i> Current Groups</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="groups-grid current-groups">
+                            <!-- Cards will be populated by JavaScript -->
+                        </div>
+                        <button class="see-all-btn primary-btn" data-section="current">See All</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="js/admin.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93313a59393fbfb6',t:'MTc0NTExNjMxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,166 @@
+// index.mjs
+import { DynamoDBClient, PutItemCommand } from '@aws-sdk/client-dynamodb';
+
+const dynamodbClient = new DynamoDBClient({ region: 'us-east-1' });
+
+export const handler = async (event) => {
+    try {
+        const { id, latitude, longitude } = event; // Directly access event attributes
+
+        if (!id || !latitude || !longitude) {
+            console.error('Missing required attributes');
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ message: 'Missing required attributes' }),
+            };
+        }
+
+        const timestamp = Date.now();
+
+        const params = {
+            TableName: 'Locations',
+            Item: {
+                id: { S: id },
+                latitude: { N: String(latitude) },
+                longitude: { N: String(longitude) },
+                timestamp: { N: String(timestamp) }
+            }
+        };
+
+        const command = new PutItemCommand(params);
+        await dynamodbClient.send(command);
+
+        return {
+            statusCode: 200,
+            body: JSON.stringify({ message: 'Location stored successfully' }),
+        };
+    } catch (error) {
+        console.error('Error storing location:', error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ message: 'Failed to store location' }),
+        };
+    }
+};
+////New main code MAr 29 9:17pm
+import { DynamoDBClient, PutItemCommand } from '@aws-sdk/client-dynamodb';
+
+const dynamodbClient = new DynamoDBClient({ region: 'us-east-1' });
+
+export const handler = async (event) => {
+    try {
+        const { id, latitude, longitude } = event;
+
+        if (!id || !latitude || !longitude) {
+            console.error('Missing required attributes');
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ message: 'Missing required attributes' }),
+            };
+        }
+
+        // Get current time
+        const now = new Date();
+
+        // Unix epoch time in seconds
+        const timestamp = Math.floor(now.getTime() / 1000);
+
+        // Separate date and time strings
+        const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+
+        const params = {
+            TableName: 'Locations',
+            Item: {
+                id: { S: id },
+                latitude: { N: String(latitude) },
+                longitude: { N: String(longitude) },
+                timestamp: { N: String(timestamp) }, // Numeric timestamp for querying
+                date: { S: date },                  // Separate date column
+                time: { S: time }                   // Separate time column
+            }
+        };
+
+        const command = new PutItemCommand(params);
+        await dynamodbClient.send(command);
+
+        return {
+            statusCode: 200,
+            body: JSON.stringify({ message: 'Location stored successfully' }),
+        };
+    } catch (error) {
+        console.error('Error storing location:', error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ message: 'Failed to store location' }),
+        };
+    }
+};
+//Code 1st April Lambda
+import { DynamoDBClient, PutItemCommand } from '@aws-sdk/client-dynamodb';
+
+const dynamodbClient = new DynamoDBClient({ region: 'us-east-1' });
+
+export const handler = async (event) => {
+    try {
+        const { id, latitude, longitude } = event;
+
+        if (!id || !latitude || !longitude) {
+            console.error('Missing required attributes');
+            return {
+                statusCode: 400,
+                body: JSON.stringify({ message: 'Missing required attributes' }),
+            };
+        }
+
+        // Get current time
+        const now = new Date();
+
+        // Unix epoch time in seconds
+        const timestamp = Math.floor(now.getTime() / 1000);
+
+        // Separate date and time strings
+        const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+
+        // Google Maps link generation
+        const mapsLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+        const params = {
+            TableName: 'Locations',
+            Item: {
+                id: { S: id },
+                latitude: { N: String(latitude) },
+                longitude: { N: String(longitude) },
+                timestamp: { N: String(timestamp) }, // Numeric timestamp for querying
+                date: { S: date },                  // Separate date column
+                time: { S: time },                   // Separate time column
+                mapsLink: { S: mapsLink }            // Adding mapsLink to DynamoDB item
+            }
+        };
+
+        const command = new PutItemCommand(params);
+        await dynamodbClient.send(command);
+
+        // Returning the response with the mapsLink included
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+                message: 'Location stored successfully',
+                id,
+                timestamp,
+                date,
+                latitude,
+                longitude,
+                time,
+                mapsLink  // Ensure mapsLink is returned in the response
+            }),
+        };
+    } catch (error) {
+        console.error('Error storing location:', error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ message: 'Failed to store location' }),
+        };
+    }
+};
